@@ -13,6 +13,13 @@ const cardnumber = document.getElementById('card-number');
 //     e.target.setSelectionRange(cursor, cursor);
 // });
 
+cardnumber.addEventListener('input', function(e) {
+    if (e.target.value.length > 16) {
+        e.target.value = e.target.value.slice(0,16);
+    }
+});
+
+
 const expity = document.getElementById('expiry');
 expity.addEventListener('input', function (e) {
     let value = e.target.value.replace(/\D/g, '');
