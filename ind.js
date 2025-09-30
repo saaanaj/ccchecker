@@ -49,11 +49,11 @@ const submitwae = document.querySelector("#submitwae");
 // API call (via CORS proxy)
 async function checkCard_GET(cardNum) {
     const url = `https://brandnew-lyart.vercel.app/check?cc=${encodeURIComponent(cardNum)}`;
-    const proxyUrl = `https://api.allorigins.win/raw?url=${encodeURIComponent(url)}`;
+  
 
     try {
         showresult.textContent = "Checking...";
-        const res = await fetch(proxyUrl);
+        const res = await fetch(url);
         const text = await res.text();
 
         showresult.textContent = text || "No response.";
